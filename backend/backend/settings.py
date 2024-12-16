@@ -140,10 +140,11 @@ MEDIA_ROOT=BASE_DIR/'media'
 
 AUTH_USER_MODEL = 'api.User' 
 
-REST_FRAMEWORK={
-    'DEFAULT_AUTHENTICATION_CLASSES':(
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
-    )
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }
 
 SIMPLE_JWT = {
